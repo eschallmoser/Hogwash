@@ -177,29 +177,109 @@
 // }
 
 
-const familyData = [
-    {
-        name: 'Doug',
-        dob: new Date('10-14-1987')
-    },
-    {
-        name: 'Erin',
-        dob: new Date('12-4-1985')
-    },
-    {
-        name: 'Frankie',
-        dob: new Date('10-27-1985')
-    },
-    {
-        name: 'Jess',
-        dob: new Date('10-30-1985')
-    },
-    {
-        name: 'Lynn',
-        dob: new Date('3-23-1964')
-    }
-]
+// const familyData = [
+//     {
+//         name: 'Doug',
+//         dob: new Date('10-14-1987')
+//     },
+//     {
+//         name: 'Erin',
+//         dob: new Date('12-4-1985')
+//     },
+//     {
+//         name: 'Frankie',
+//         dob: new Date('10-27-1985')
+//     },
+//     {
+//         name: 'Jess',
+//         dob: new Date('10-30-1985')
+//     },
+//     {
+//         name: 'Lynn',
+//         dob: new Date('3-23-1964')
+//     }
+// ]
 
-familyData.forEach(person => console.log(`My name is ${person.name} and I was born on ${person.dob}` ))
+// familyData.forEach(person => console.log(`My name is ${person.name} and I was born on ${person.dob}` ))
+
+// Constructor Function
+// function Person(firstName, lastName, dob) {
+    // this.firstName = firstName;
+    // this.lastName = lastName;
+    // this.dob = new Date(dob);
+    // this isn't actually the best way to do this because it sticks the
+    // function in the object--you want to use prototypes instead
+    // this.getBirthYear = function () {
+    //     return this.dob.getFullYear();
+    // }
+    // this.getFullName = function () {
+    //     return `${this.firstName} ${this.lastName}`; 
+    // }
+// }
 
 
+// console.log(person1.dob.getFullYear());
+// console.log(person1.getBirthYear());
+// console.log(person1.getFullName());
+// console.log(person2.getBirthYear());
+
+// console.log(person1);
+
+// Prototypes
+// Person.prototype.getBirthYear = function () {
+//     return this.dob.getFullYear();
+// }
+
+// Person.prototype.getFullName = function() {
+//     return `${this.firstName} ${this.lastName}`;
+// }
+
+// Class
+// class Person {
+//     constructor (firstName, lastName, dob) {
+//         this.firstName = firstName;
+//         this.lastName = lastName;
+//         this.dob = new Date(dob);
+//     }
+
+//     getBirthYear() {
+//         return this.dob.getFullYear();
+//     }
+//     getFullName() {
+//         return `${this.firstName} ${this.lastName}`;
+//     }
+// }
+
+// // Instantiate Object
+// const person1 = new Person('John', 'Doe', '4-3-1980');
+// const person2 = new Person('Mary', 'Smith', '3-6-1970');
+
+// console.log(person2.getFullName());
+// console.log(person1);
+
+
+// Selectors:
+// single element
+// const form =document.getElementById('my-form');
+// console.log(form);
+// console.log(document.querySelector('.container'));
+// console.log(document.querySelector('h1'));
+
+
+// multiple element
+// console.log(document.querySelectorAll('.item'));
+
+// const items = document.querySelectorAll('.item'); 
+
+// items.forEach((item) => console.log(item));
+
+const ul = document.querySelector('.items');
+
+// ul.remove();
+
+// ul.firstElementChild.remove();
+// ul.lastElementChild.remove();
+ul.firstElementChild.textContent = 'Hello';
+// ul.lastElementChild.textContent = 'Goodbye';
+ul.children[1].textContent = 'The Middle';
+ul.lastElementChild.innerHTML = '<h1>Goodbye</h1>'
